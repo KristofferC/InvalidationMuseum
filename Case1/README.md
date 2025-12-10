@@ -12,7 +12,7 @@ invalidations = @snoop_invalidations begin
     using Documenter
 end
 
-trees = invalidation_trees(invs)
+trees = invalidation_trees(invalidations)
 
 ...
  inserting convert(::Type{String}, x::JSON.PtrString) @ JSON ~/.julia/packages/JSON/0oqO1/src/lazy.jl:426 invalidated:
