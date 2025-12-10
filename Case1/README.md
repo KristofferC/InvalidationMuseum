@@ -28,3 +28,19 @@ index!(::Dict{String, Union{Nothing, Tuple{Base.PkgId, String}}}, ::Nothing, ::A
                  16: signature Tuple{typeof(convert), Type{Symbol}, Any} triggered MethodInstance for setindex!(::Dict{Symbol, Bool}, ::Any, ::Any) (650 children)
                  17: signature Tuple{typeof(convert), Type{Symbol}, Any} triggered MethodInstance for @NamedTuple{region::UnitRange{Int64}, label::Symbol, value}(::NamedTuple{(:region, :label, :value)}) (763 children)
 ```
+
+
+```
+julia> ascend(victim)
+Choose a call for analysis (q to quit):
+ >   @NamedTuple{region::UnitRange{Int64}, label::Symbol, value}(::NAMEDTUPLE{(:REGION, :LABEL, :VALUE)})
+       convert(::Type{@NamedTuple{region::UnitRange{Int64}, label::Symbol, value}}, ::NAMEDTUPLE{(:REGION, :LABEL, :VALUE)})
+         push!(::Vector{@NamedTuple{region::UnitRange{Int64}, label::Symbol, value}}, ::NAMEDTUPLE)
+           _collect(::Type{@NamedTuple{region::UnitRange{Int64}, label::Symbol, value}}, ::Base.Generator{Base.Iterators.Filter{Base.var"#annotations##2#annotations##3"{UnitRange{
+             collect(::Type{@NamedTuple{region::UnitRange{Int64}, label::Symbol, value}}, ::Base.Generator{Base.Iterators.Filter{Base.var"#annotations##2#annotations##3"{UnitRange
+               annotations(::Base.AnnotatedString{String}, ::UnitRange{Int64})
+                 annotations(::Base.AnnotatedString{String}, ::Int64)
+                   getindex(::Base.AnnotatedString{String}, ::Int64)
+                     iterate(::Base.AnnotatedString{String}, ::Int64)
+v                      iterate(::SubString{Base.AnnotatedString{String}}, ::Int64)
+```
