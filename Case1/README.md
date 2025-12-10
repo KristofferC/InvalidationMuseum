@@ -48,3 +48,11 @@ Choose a call for analysis (q to quit):
                      iterate(::Base.AnnotatedString{String}, ::Int64)
 v                      iterate(::SubString{Base.AnnotatedString{String}}, ::Int64)
 ```
+
+
+```
+│   %42 = Base.setindex::Core.Const(Base.setindex)
+│   %43 = ann::@NamedTuple{region::UnitRange{Int64}, label::Symbol, value}
+│   %44 = clamped_region::UnitRange{Int64}
+│   %45 = (%42)(%43, %44, :region)::NamedTuple <---------------------
+```
