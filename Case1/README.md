@@ -31,6 +31,8 @@ index!(::Dict{String, Union{Nothing, Tuple{Base.PkgId, String}}}, ::Nothing, ::A
 
 
 ```
+julia> sig, victim = trees[end].mt_backedges[end]
+
 julia> ascend(victim)
 Choose a call for analysis (q to quit):
  >   @NamedTuple{region::UnitRange{Int64}, label::Symbol, value}(::NAMEDTUPLE{(:REGION, :LABEL, :VALUE)})
