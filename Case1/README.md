@@ -12,6 +12,7 @@ invalidations = @snoop_invalidations begin
     using Documenter
 end
 
+using SnoopCompile
 trees = invalidation_trees(invalidations)
 
 ...
